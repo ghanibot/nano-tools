@@ -70,12 +70,17 @@ def ask(
     tools: str = typer.Option("safe", "--tools", "-t", help="all | safe | file | code | web | util"),
 ):
     """Run a prompt with tools via LLM (tool-call loop)."""
-    from nano_tools.builtin import ALL_TOOLS, SAFE_TOOLS, FILE_TOOLS, CODE_TOOLS, WEB_TOOLS, UTIL_TOOLS
+    from nano_tools.builtin import (
+        ALL_TOOLS, SAFE_TOOLS, FILE_TOOLS, CODE_TOOLS, WEB_TOOLS, UTIL_TOOLS,
+        DOC_TOOLS, GIT_TOOLS, VISION_TOOLS, MEMORY_TOOLS, REPL_TOOLS,
+    )
     from nano_tools.toolkit import ToolKit
 
     tool_sets = {
-        "all": ALL_TOOLS, "safe": SAFE_TOOLS, "file": FILE_TOOLS,
-        "code": CODE_TOOLS, "web": WEB_TOOLS, "util": UTIL_TOOLS,
+        "all": ALL_TOOLS, "safe": SAFE_TOOLS,
+        "file": FILE_TOOLS, "code": CODE_TOOLS, "web": WEB_TOOLS,
+        "util": UTIL_TOOLS, "doc": DOC_TOOLS, "git": GIT_TOOLS,
+        "vision": VISION_TOOLS, "memory": MEMORY_TOOLS, "repl": REPL_TOOLS,
     }
     selected = tool_sets.get(tools, SAFE_TOOLS)
     kit = ToolKit(selected)

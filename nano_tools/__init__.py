@@ -1,9 +1,14 @@
 from nano_tools.decorator import tool, Tool
 from nano_tools.toolkit import ToolKit
-from nano_tools.builtin import ALL_TOOLS, SAFE_TOOLS, FILE_TOOLS, CODE_TOOLS, WEB_TOOLS, UTIL_TOOLS
+from nano_tools.builtin import (
+    ALL_TOOLS, SAFE_TOOLS, FILE_TOOLS, CODE_TOOLS, WEB_TOOLS, UTIL_TOOLS,
+    DOC_TOOLS, GIT_TOOLS, VISION_TOOLS, MEMORY_TOOLS, REPL_TOOLS,
+)
 
 __version__ = "0.1.0"
 __all__ = [
     "tool", "Tool", "ToolKit",
-    "ALL_TOOLS", "SAFE_TOOLS", "FILE_TOOLS", "CODE_TOOLS", "WEB_TOOLS", "UTIL_TOOLS",
+    "ALL_TOOLS", "SAFE_TOOLS",
+    "FILE_TOOLS", "CODE_TOOLS", "WEB_TOOLS", "UTIL_TOOLS",
+    "DOC_TOOLS", "GIT_TOOLS", "VISION_TOOLS", "MEMORY_TOOLS", "REPL_TOOLS",
 ]
